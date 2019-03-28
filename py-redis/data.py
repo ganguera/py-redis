@@ -1,0 +1,3 @@
+class RedisDatabase(object):
+
+    pass
