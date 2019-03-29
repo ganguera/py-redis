@@ -220,10 +220,10 @@ class RedisCommand(object):
         stop = int(self.arguments[2])
         array = getattr(self.datastore, key, list())
         output = ''
-        if stop >= 0:
-            stop += 1
+        if stop == -1:
+            stop = None
         else:
-            stop -= 1
+            stop += 1
         for value in array[start:stop]:
             output += '{}\n'.format(value)
         return (0, serialize_array('{}'.format(output)))

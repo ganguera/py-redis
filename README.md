@@ -24,7 +24,7 @@ Keys:
 Lists:
 * LPOP
 * LPUSH
-* LRANGE (Negative offsets not supported properly)
+* LRANGE
 * RPOP
 * RPUSH
 
