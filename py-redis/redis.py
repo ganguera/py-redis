@@ -229,4 +229,7 @@ class RedisCommand(object):
         return (0, serialize_array('{}'.format(output)))
 
     def MSET(self):
+        arguments = iter(self.arguments)
+        for key in arguments:
+            setattr(self.datastore, key, (next(arguments), None))
         return (0, serialize_string('OK'))

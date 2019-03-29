@@ -39,7 +39,7 @@ Sets:
 Strings:
 * GET
 * INCR
-* MSET (Need to be implemented)
+* MSET
 * SET
 
 Sorted Sets:
