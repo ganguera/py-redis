@@ -1,3 +1,5 @@
 class RedisDatabase(object):
 
-    pass
+    def flush(self):
+        for value in list(vars(self)):
+            delattr(self, value)

@@ -31,6 +31,8 @@ Lists:
 Server:
 * COMMAND (Partially implemented to avoid redis-cli errors)
 * DBSIZE
+* FLUSHALL
+* FLUSHDB
 
 Sets:
 * SADD

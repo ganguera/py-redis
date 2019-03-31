@@ -24,6 +24,9 @@ class RedisHandler(asyncore.dispatcher_with_send):
                 self.handle_close()
             elif 10 <= code <= 10 + self.num_databases:
                 self.client_db = code - 10
+            elif code == 20:
+                for datastore in self.databases:
+                    datastore.flush()
 
     def handle_close(self):
         print('Closing connection from {}:{}'.format(*self.addr))

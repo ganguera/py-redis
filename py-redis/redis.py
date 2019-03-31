@@ -59,6 +59,13 @@ class RedisCommand(object):
                 output += '{}\n'.format(value)
         return (0, serialize_array('{}'.format(output)))
 
+    def FLUSHDB(self):
+        self.datastore.flush()
+        return (0, serialize_string('OK'))
+
+    def FLUSHALL(self):
+        return (20, serialize_string('OK'))
+
     def SET(self):
         key = self.arguments[0]
         value = self.arguments[1]
